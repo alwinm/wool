@@ -44,3 +44,13 @@ Warning: cloning this repo also means downloading 100 MB of test data. If you ju
 # Boundary Function
 
 A boundary function takes in the label array resulting from scipy.ndimage.label and optional arguments. Then, it should find tuples of labels which neighbor each other due to boundary correction. I provide examples wool.periodic and wool.shear_periodic which pick out labels on faces, and wool.connect_faces_rank(face1,face2) connects two faces. 
+
+# test_wool.py
+
+I provide some example masks under the data directory. You can try running 
+
+```
+python test_wool.py
+```
+
+which will show the results of boundary correction. It also shows how the example functions work with both 2D and 3D arrays. The data arrays are 3D and are summed over axis 2 to create 2D arrays. 
