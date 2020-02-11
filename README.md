@@ -11,27 +11,35 @@ Warning: cloning this repo also means downloading 100 MB of test data. If you ju
 # Usage
 
  - As with scipy.ndimage.label, user defines a masking function to convert an input numpy array into a True/False array. 
-    
+
+```python    
     import numpy
     example = numpy.random.random([100,100,100])
     mask = example > 0.2
+```
 
 - As with scipy.ndimage.label, user uses scipy.ndimage.generate_binary_structure to define a struct. 
 
+```python
     import scipy.ndimage
     struct = scipy.ndimage.generate_binary_structure(3,3)
+```
 
 - User defines a boundary function which accepts boundary arguments (see wool.tigress example)
 
+```python
     def boundary(label,bargs):
     	connectset = set()
         ...
 	
         return connectset
+```
 
 - Put mask, struct, and boundary correction together to make a dictionary of objects. 
 
+```python
     output_dictionary, owner_dictionary = wool.make_dict(mask,struct,boundary,bargs)
+```
 
 # Boundary Function
 
