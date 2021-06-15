@@ -79,7 +79,7 @@ def shear_periodic(label,axis,cell_shear,shear_axis):
     lf1 = label[tuple(select1)]
     lf2 = label[tuple(select2)]
     # 2. now cell shear
-    axes = range(dim)
+    axes = list(range(dim))
     axes.remove(axis)
     aisa = axes.index(shear_axis)
     lf2 = n.roll(lf2,cell_shear,axis=aisa)
